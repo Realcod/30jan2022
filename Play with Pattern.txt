@@ -1,0 +1,45 @@
+/*
+Ninja wanted to go to a party along with his friends. However, his mom wanted him to go only if he completes a task assigned by her.
+She gave Ninja a value and asked him to print an X-shaped pattern.
+Example : Pattern for N = 3 (No. of rows = 5, No. of columns = 5) :
+1   1
+ 2 2
+  3
+ 2 2
+1   1
+Since Ninja is in a hurry and doesn’t want to be late for the party; he asks you to solve the problem. Can you help solve this problem?
+*/
+
+void ninjaPattern(int n)
+{
+    //Varaibles declared
+    int i, j, value = 1;
+
+    // We are running two for loops. The outer one for each row and the inner one for each column.
+    for (i = 0; i <= 2 * (n - 1); i++) 
+    {
+        for (j = 0; j <= 2 * (n - 1); j++) 
+        {
+            // Check if current row count is equal to current column count. Or if (current column count + row count) is (size - 1).
+            if (i == j || (i + j) == 2 * (n - 1))
+            {
+                cout << value;
+            } 
+            else 
+            {
+                cout << " ";
+            }
+        }
+        
+        //For the remaining values
+        if (i < n - 1)
+        {
+            value++;
+        } 
+        else 
+        {
+            value--;
+        }
+        cout << endl;
+    }
+}
