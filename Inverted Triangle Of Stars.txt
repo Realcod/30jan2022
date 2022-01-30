@@ -1,0 +1,36 @@
+/*
+Problem Statement
+Problem Statement
+You have been given an integer ‘N’. You need to print an inverted isosceles triangle of stars such that the height of the triangle is N.
+For Example :
+If N = 4 then the output will
+*******
+ *****
+  ***
+   *
+*/
+#include<iostream>
+using namespace std;
+
+int main(){
+	int n,spaces=1;
+	cout<<"Enter number of rows"<<endl;
+	cin>>n;
+
+	int i=n;
+	while(i>=1){
+		int k=1;
+		while(k<=spaces-1){
+			cout<<" ";
+			k++;
+		}
+		int j=1;
+		while(j<=2*i-1){
+			cout<<"*";
+			j++;
+		}
+		cout<<endl;
+		i--;
+		spaces++;
+	}
+}
